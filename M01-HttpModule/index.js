@@ -1,8 +1,10 @@
-const express = require("express");
-const app = express();
+const http = require("http");
 
-app.get("/", (req, res) =>{
-    res.send("Hello World");
-});
+http
+    .createServer(function(req, res){
+        res.writeHead(200, {"Content-Type": "text/html"});
+        res.write("<H1>Module HTTP and Web</H1>");
 
-app.listen(3000);
+        res.end();
+})
+.listen(3000);
